@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rolla-V Die for Metal Bending — Ella Kapanga</title>
+<meta name="description" content="Design of a coin-folding press using a Rolla-V / wing bend die: concept selection, force and stress analysis, and physical experimentation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><a href="../index.html">Ella Kapanga<span>.</span></a></div>
+    <nav class="links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="proj-hero">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#projects">← Back to projects</a>
+    <h1>Rolla-V Die for Metal Bending</h1>
+    <div class="sub">MACHINE DESIGN CHALLENGE · FOLD A QUARTER IN HALF</div>
+    <div class="proj-meta">
+      <span class="m">SolidWorks</span>
+      <span class="m">Force &amp; stress analysis</span>
+      <span class="m">Physical experimentation</span>
+    </div>
+  </div>
+</section>
+
+<section class="proj-content">
+  <div class="wrap">
+    <p class="lede">Design a machine that folds a U.S. quarter in half — internal bend radius ≤ 0.25 mm, planarity within 5° — while minimizing coin disfiguration. My solution: a lever press with a Rolla-V (wing bend) die, whose oscillating rotors support the workpiece through the bend and cut friction and surface marking.</p>
+
+    <div class="overview">
+      <div>
+        <h3>Project Overview</h3>
+        <p>Starting from the coin's material properties (90-10 copper-nickel: 275 MPa UTS, 105 MPa yield, work-hardening), I compared a hand press + V die against a pneumatic press, then converged on a <b>press machine with a wing bend V die</b> — combining bending and flattening to 180 ± 5° in one modular setup. I sized the loads with beam-bending theory, validated the concept physically on an arbor press, and documented failure modes with fixes.</p>
+      </div>
+      <dl class="ov-facts">
+        <div class="r"><dt>Brief</dt><dd>Fold a quarter · r ≤ 0.25 mm · 5° planarity</dd></div>
+        <div class="r"><dt>Material</dt><dd>90-10 CuNi · 275 MPa UTS · work-hardens</dd></div>
+        <div class="r"><dt>Max force</dt><dd>P = k·UTS·L·T²/W ≈ 1.8 kN</dd></div>
+        <div class="r"><dt>Die</dt><dd>Wing bend, 28 × 28 × 16 mm, 2 rotors</dd></div>
+      </dl>
+    </div>
+
+    <h2>The Rolla-V / wing bend die</h2>
+    <div class="gallery two">
+      <figure><img src="rolla-v-die/rolla-v-orange.png" alt="Rolla-V die assembly render"><figcaption>Rolla-V die assembly — oscillating rotors &amp; punches</figcaption></figure>
+      <figure><img src="rolla-v-die/rolla-v-exploded.png" alt="Rolla-V die exploded view"><figcaption>Exploded view — rotors, springs, pins</figcaption></figure>
+    </div>
+    <p>Unlike a standard V die, the Rolla-V's spring-loaded rotors rotate with the workpiece as it bends, keeping support under the material through the stroke. That reduces sliding friction and surface marking — exactly what the "minimal coin disfiguration" requirement demanded.</p>
+
+    <h2>Concept selection</h2>
+    <div class="gallery two">
+      <figure><img src="rolla-v-die/concept-sketches.jpg" alt="Concept sketches"><figcaption>Concept sketches — hand press vs. pneumatic</figcaption></figure>
+      <figure><img src="rolla-v-die/mechanism-sketch.jpg" alt="Chosen mechanism sketch"><figcaption>Chosen mechanism — punch + wing bend die to 180°</figcaption></figure>
+    </div>
+    <p>Concept A (hand press + V die) was simple and modular but operator-dependent; Concept B (pneumatic) gave repeatable load at higher cost and complexity. The chosen design modifies A with the wing bend die — controlled bending, low friction, and one setup for both pre-bend and flattening.</p>
+
+    <h2>Final design</h2>
+    <div class="gallery two">
+      <figure><img src="rolla-v-die/press-render.jpg" alt="Press final design render"><figcaption>Final press — 65 × 90 mm base, 200 mm lever</figcaption></figure>
+      <figure><img src="rolla-v-die/die-render.jpg" alt="Wing bend die render"><figcaption>Wing bend die — bend radius set by 0.25 mm punch tip</figcaption></figure>
+    </div>
+
+    <h2>Force &amp; stress analysis</h2>
+    <div class="gallery">
+      <figure><img src="rolla-v-die/force-calcs.jpg" alt="Hand calculations for bending force"><figcaption>Beam model, bend allowance &amp; force vs. angle — hand calcs</figcaption></figure>
+    </div>
+    <div class="gallery">
+      <figure><img src="rolla-v-die/bending-force.jpg" alt="Maximum bending force calculation"><figcaption>Max bending force: P = k·UTS·L·T²/W ≈ 1.8 kN (k = 1.33, W = 8t)</figcaption></figure>
+    </div>
+    <p>Modeling the quarter as a simply supported beam with a central load, I worked from yield (where plastic forming begins) toward UTS, accounted for CuNi's work-hardening, and computed the maximum bending force at ≈ 1.8 kN — the sizing basis for the press and die.</p>
+
+    <h2>Experimentation</h2>
+    <div class="gallery two">
+      <figure><img src="rolla-v-die/exp-setup.jpg" alt="Quarter positioned against the wedge on the arbor press"><figcaption>Quarter positioned against the improvised wiping die</figcaption></figure>
+      <figure><img src="rolla-v-die/exp-bend.jpg" alt="Coin mid-bend under the ram"><figcaption>Mid-bend — ram forcing the coin over the wedge</figcaption></figure>
+    </div>
+    <div class="gallery two">
+      <figure><img src="rolla-v-die/exp-hammer.jpg" alt="Coin bent to ~90 degrees with mallet"><figcaption>~90° pre-bend, then flattening by mallet</figcaption></figure>
+      <figure><img src="rolla-v-die/exp-final.jpg" alt="Final folded quarter"><figcaption>Final product — quarter folded to ~180°</figcaption></figure>
+    </div>
+    <p>I validated the process physically with an arbor press and an improvised wiping-die setup: pre-bend to ~90°, then flatten. Observations — outer-radius warping, surface indentation, and much higher force at flattening — fed the failure analysis: anneal before bending, use the wing die to cut friction, and split bending/flattening into a two-step hemming-die process.</p>
+
+    <div class="chips center">
+      <span class="chip">Machine Design</span><span class="chip">SolidWorks</span><span class="chip">Beam Bending</span><span class="chip">Metal Forming</span><span class="chip">Die Design</span><span class="chip">DFMEA Thinking</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="foot-inner"><span>Ella Kapanga · Mechanical Engineering</span><span><a href="../index.html">← Home</a></span></div></footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" onclick="closeLb()">
+  <span class="lb-close" onclick="closeLb()">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+  document.querySelectorAll('.gallery figure img').forEach(function(t){
+    t.parentElement.addEventListener('click',function(){
+      img.src=t.src; img.alt=t.alt||'';
+      var fc=t.parentElement.querySelector('figcaption');
+      cap.textContent=fc?fc.textContent:'';
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+    });
+  });
+  window.closeLb=function(){lb.classList.remove('open'); document.body.style.overflow='';};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeLb();});
+})();
+</script>
+</body>
+</html>
