@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paper Tower — Truss Analysis — Ella Kapanga</title>
+<meta name="description" content="Hand-calculated truss statics and material-test-driven design of a load-bearing paper tower. Method of joints, tension/compression analysis, University of Kentucky.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><a href="../index.html">Ella Kapanga<span>.</span></a></div>
+    <nav class="links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="proj-hero">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#projects">← Back to projects</a>
+    <h1>Paper Tower — Truss Analysis &amp; Material Testing</h1>
+    <div class="sub">HAND-CALCULATED STATICS · MATERIAL-TEST-DRIVEN DESIGN</div>
+    <div class="proj-meta">
+      <span class="m">University of Kentucky</span>
+      <span class="m">Method of joints</span>
+      <span class="m">Load-tested build</span>
+    </div>
+  </div>
+</section>
+
+<section class="proj-content">
+  <div class="wrap">
+    <p class="lede">A load-bearing tower built from wrapped notebook paper, designed to hold 5 lb within a 9 × 4 in envelope. The interesting engineering isn't the tower — it's the analysis behind it: material testing to pick the members, then a full method-of-joints truss solution to verify the structure.</p>
+
+    <div class="overview">
+      <div>
+        <h3>Project Overview</h3>
+        <p>Starting from in-class material testing, the team measured how paper-tube diameter and wrap count affected load capacity, then used that data to select members. I worked the <b>statics</b>: treating the tower as a truss, I solved each joint with ΣF = 0 to find the internal forces, identifying which members carry <b>tension</b> (cross-braces) and which carry <b>compression</b> (columns). The built tower held its target load.</p>
+      </div>
+      <dl class="ov-facts">
+        <div class="r"><dt>Analysis</dt><dd>Method of joints, tension/compression</dd></div>
+        <div class="r"><dt>Material</dt><dd>0.25 in tube, 3 wraps — held 10.1 lb</dd></div>
+        <div class="r"><dt>Envelope</dt><dd>&le; 9 in tall, &le; 4 in wide</dd></div>
+        <div class="r"><dt>Result</dt><dd>Supported the 5 lb target load</dd></div>
+      </dl>
+    </div>
+
+    <h2>Truss statics — method of joints</h2>
+    <div class="gallery">
+      <figure><img src="paper-tower/tower-handcalc.jpg" alt="Hand-calculated joint-by-joint truss analysis"><figcaption>Joint-by-joint ΣF = 0 solution · tension &amp; compression</figcaption></figure>
+    </div>
+    <p>Every joint solved by hand: with all columns in compression and all cross-bars in tension, I resolved forces at joints A through H to find each member's internal load — the same statics fundamentals that scale up to real structural and mechanical design.</p>
+
+    <h2>Design &amp; material testing</h2>
+    <div class="gallery two">
+      <figure><img src="paper-tower/tower-cad.jpg" alt="CAD render of the paper tower"><figcaption>CAD model — braced tower</figcaption></figure>
+      <figure><img src="paper-tower/tower-materials.jpg" alt="Materials list and sketch"><figcaption>Materials list &amp; design sketch</figcaption></figure>
+    </div>
+    <p>Material testing showed a 0.25 in tube with 3 wraps held the most weight (10.1 lb) — counterintuitively outperforming larger diameters, since added weight came only from more wraps, not width. That drove the member selection for the final build.</p>
+
+    <h2>Built &amp; load-tested</h2>
+    <div class="gallery two">
+      <figure><img src="paper-tower/tower-build.jpg" alt="Built paper tower under load"><figcaption>Built tower under test load</figcaption></figure>
+    </div>
+    <p>The completed tower supported its intended load. In the optimization write-up I noted the cross-braces sat slightly loose, reducing their bracing effect — next iteration would tune brace lengths for a tighter, fully engaged truss.</p>
+
+    <div class="chips center">
+      <span class="chip">Statics</span><span class="chip">Method of Joints</span><span class="chip">Material Testing</span><span class="chip">CAD</span><span class="chip">Structural Design</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="foot-inner"><span>Ella Kapanga · Mechanical Engineering</span><span><a href="../index.html">← Home</a></span></div></footer>
+
+<!-- lightbox -->
+<div class="lb" id="lb" onclick="closeLb()">
+  <span class="lb-close" onclick="closeLb()">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+  document.querySelectorAll('.gallery figure img').forEach(function(t){
+    t.parentElement.addEventListener('click',function(){
+      img.src=t.src; img.alt=t.alt||'';
+      var fc=t.parentElement.querySelector('figcaption');
+      cap.textContent=fc?fc.textContent:'';
+      lb.classList.add('open'); document.body.style.overflow='hidden';
+    });
+  });
+  window.closeLb=function(){lb.classList.remove('open'); document.body.style.overflow='';};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeLb();});
+})();
+</script>
+</body>
+</html>
