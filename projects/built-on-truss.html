@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automated Water Sampler — Ella Kapanga</title>
+<meta name="description" content="Gear-driven rotating base for an automated water sampler. Onshape CAD, stepper + MATLAB control, University of Kentucky EGR 215 team project.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand"><a href="../index.html">Ella Kapanga<span>.</span></a></div>
+    <nav class="links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#experience">Experience</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="proj-hero">
+  <div class="wrap">
+    <a class="back-link" href="../index.html#projects">← Back to projects</a>
+    <h1>Automated Water Sampler — Rotating Base</h1>
+    <div class="sub">TEAM "BUILT ON TRUSS" · MY SUBSYSTEM: THE ROTATING BASE</div>
+    <div class="proj-meta">
+      <span class="m">University of Kentucky · EGR 215</span>
+      <span class="m">Team of 4</span>
+      <span class="m">Onshape · MATLAB · Stepper</span>
+    </div>
+  </div>
+</section>
+
+<section class="proj-content">
+  <div class="wrap">
+    <p class="lede">A four-person system that lowers a pipette, collects a 1 mL water sample, and dispenses it into cups indexed by a rotating base, with a vision system measuring pipette-to-sludge distance. I designed and built the gear-driven rotating base.</p>
+
+    <h2>The built prototype</h2>
+    <div class="gallery">
+      <figure><img src="built-on-truss/build-dispensing.jpg" alt="Pipette dispensing into a cup on the turntable"><figcaption>Pipette dispensing into an indexed cup</figcaption></figure>
+      <figure><img src="built-on-truss/build-full-system.jpg" alt="Full system top view"><figcaption>Full system — top view</figcaption></figure>
+    </div>
+    <p>The completed system: a laser-cut turntable driven by a laser-cut spur gear and stepper motor, with the pipette arm dispensing into cups indexed on the rotating base. Fully automated — no manual intervention during the sampling cycle.</p>
+
+    <h2>My subsystem — the rotating base</h2>
+    <div class="gallery">
+      <figure><img src="built-on-truss/build-gear-train.jpg" alt="Gear train and stepper motor"><figcaption>Gear train + stepper drive</figcaption></figure>
+      <figure><img src="built-on-truss/rotating-base.jpg" alt="Rotating base CAD render"><figcaption>Rotating base — CAD render</figcaption></figure>
+    </div>
+    <ul>
+      <li>Gear-driven turntable: a stepper motor drives a laser-cut pinion meshing with the platform gear, converting motor steps into a repeatable fixed rotation increment.</li>
+      <li>CAD developed in Onshape, with dimensioned engineering drawings released for fabrication.</li>
+      <li>Automated in MATLAB per project requirements.</li>
+    </ul>
+
+    <h2>Released drawing</h2>
+    <div class="gallery tall">
+      <figure><img src="built-on-truss/rotating-base-drawing.jpg" alt="Dimensioned rotating base drawing"><figcaption>Rotating base — dimensioned drawing · scale 1:6 · size A</figcaption></figure>
+    </div>
+
+    <h2>Constraints I helped define</h2>
+    <p>I owned the team's constraints definition: <b>hard constraints</b> — 1 mL minimum sample, pipette lowered to 1 cm above sludge, fully automated code, fixed-increment rotation; <b>soft constraints</b> — swappable pipettes, cost-effectiveness, wood construction, Onshape and MATLAB toolchain.</p>
+
+    <h2>Integration &amp; lessons learned</h2>
+    <div class="gallery">
+      <figure><img src="built-on-truss/build-pipette-stand.jpg" alt="Pipette stand subsystem"><figcaption>Pipette stand / squeeze subsystem</figcaption></figure>
+      <figure><img src="built-on-truss/build-setup.jpg" alt="Full demo setup"><figcaption>Full setup on demo day</figcaption></figure>
+    </div>
+    <p>Integrating four independently designed subsystems surfaced real interface issues — stand clearance over the cups on the rotating base, and automating the stepper control end to end. Working through them taught me early lessons in interface management and integration planning that I later applied at much larger scale in manufacturing roles.</p>
+
+    <div class="chips center">
+      <span class="chip">Onshape</span><span class="chip">Gear Design</span><span class="chip">Stepper Control</span><span class="chip">MATLAB</span><span class="chip">Engineering Drawings</span><span class="chip">System Integration</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="foot-inner"><span>Ella Kapanga · Mechanical Engineering</span><span><a href="../index.html">← Home</a></span></div></footer>
+</body>
+</html>
